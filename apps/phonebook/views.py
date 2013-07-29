@@ -150,6 +150,7 @@ def edit_profile(request):
                 profile=request.user.userprofile,
                 apps=user.apiapp_set.filter(is_active=True))
 
+
     # If there are form errors, don't send a 200 OK.
     status = 400 if (profile_form.errors or user_form.errors) else 200
     return render(request, 'phonebook/edit_profile.html', data, status=status)
